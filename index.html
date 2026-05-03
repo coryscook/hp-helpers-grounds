@@ -20,9 +20,22 @@
     "name": "HP Helpers Grounds",
     "description": "Lawn and grounds maintenance, edging, trimming, hedge pruning, seasonal cleanup, large-lot mowing, and parking lot striping serving the DFW metroplex.",
     "telephone": "+18177617973",
+    "email": "info@hphelpers.com",
     "areaServed": {
       "@type": "Place",
       "name": "Dallas-Fort Worth Metroplex"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Arlington",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Heritage Pride Helpers",
+      "url": "https://hphelpers.com",
+      "legalName": "HP Helpers & Logistics, LLC"
     },
     "priceRange": "$$"
   }
@@ -101,18 +114,17 @@
       gap: 0.75rem;
     }
     .brand-mark {
-      width: 52px;
-      height: 52px;
-      background: var(--navy);
-      color: var(--cream);
+      width: 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      font-family: 'Alfa Slab One', serif;
-      font-size: 1.4rem;
-      border: 3px solid var(--red);
       flex-shrink: 0;
+    }
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
     .brand-name {
       font-family: 'Alfa Slab One', serif;
@@ -513,6 +525,85 @@
       .testimonial-card { padding: 2.5rem 1.25rem 1.75rem; box-shadow: 5px 5px 0 var(--navy); }
     }
 
+    /* === Parent brand credibility === */
+    .credibility {
+      background: var(--cream);
+      border-bottom: 4px solid var(--cream-dark);
+      padding: 3rem 1.25rem;
+    }
+    .credibility-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .credibility-eyebrow {
+      display: inline-block;
+      background: var(--navy);
+      color: var(--cream);
+      padding: 0.4rem 1rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .credibility-headline {
+      font-family: 'Alfa Slab One', serif;
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+    .credibility-headline .red { color: var(--red); }
+    .credibility-sub {
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      font-size: 1.05rem;
+      color: var(--navy);
+      opacity: 0.85;
+    }
+    .credibility-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .cred-stat {
+      background: white;
+      border: 2px solid var(--navy);
+      padding: 1.25rem 1rem;
+      box-shadow: 4px 4px 0 var(--navy);
+    }
+    .cred-stat .num {
+      display: block;
+      font-family: 'Alfa Slab One', serif;
+      font-size: 2rem;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    .cred-stat .label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+    .credibility-note {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 2px dashed var(--cream-dark);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--navy);
+      opacity: 0.85;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     /* === Service area === */
     .service-area {
       background: var(--navy);
@@ -628,6 +719,47 @@
       font-size: 0.85rem;
       opacity: 0.7;
     }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 1.25rem 0 0.5rem;
+    }
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      background: var(--red);
+      border-radius: 50%;
+      color: var(--cream);
+      transition: background 0.15s;
+    }
+    .footer-social a:hover { background: var(--cream); color: var(--red); }
+    .footer-social svg { width: 18px; height: 18px; fill: currentColor; }
+    .footer-crosslink {
+      margin-top: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: rgba(244, 234, 212, 0.08);
+      border: 1px solid rgba(244, 234, 212, 0.2);
+      border-radius: 4px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+    }
+    .footer-crosslink a {
+      color: var(--cream);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    .footer-crosslink a:hover { color: var(--red); }
+    .footer-legal {
+      font-size: 0.85rem;
+      opacity: 0.6;
+      margin-top: 0.75rem;
+    }
 
     /* === Mobile sticky call button === */
     .mobile-call {
@@ -678,14 +810,14 @@
 
   <!-- Top contact bar -->
   <div class="topbar">
-    Serving the entire DFW Metroplex • <a href="tel:+18177617973">Call or Text 817-761-7973</a>
+    Serving the entire DFW Metroplex • <a href="tel:+18177617973">817-761-7973</a> • <a href="mailto:info@hphelpers.com">info@hphelpers.com</a>
   </div>
 
   <!-- Header -->
   <header>
     <div class="header-inner">
       <a href="#" class="brand" style="text-decoration:none;">
-        <div class="brand-mark">HP</div>
+        <div class="brand-mark"><img src="images/hp-logo.png" alt="Heritage Pride Helpers logo" /></div>
         <div class="brand-name">
           HP Helpers
           <span class="accent">Grounds</span>
@@ -700,7 +832,7 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-inner">
-      <span class="eyebrow">★ Heritage Pride Helpers ★</span>
+      <span class="eyebrow">★ A Heritage Pride Helpers Company ★</span>
       <h1 class="display hero-title">
         HP Helpers
         <span class="red">Grounds</span>
@@ -774,7 +906,7 @@
             <div class="ba-stamp before">Before</div>
           </div>
           <div class="ba-item">
-            <img src="images/customer-crew-onsite.jpg" alt="Same backyard freshly mowed and edged with HP Helpers crew on-site" loading="lazy" />
+            <img src="images/customer-back-yard-after.jpg" alt="Same backyard freshly mowed and cleaned up after HP Helpers service" loading="lazy" />
             <div class="ba-stamp after">After</div>
           </div>
         </div>
@@ -796,6 +928,22 @@
       </div>
 
       <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/customer-crew-onsite.jpg" alt="HP Helpers crew in red uniform shirts on a freshly mowed residential backyard" loading="lazy" />
+          <div class="gallery-caption">
+            <span class="tag">★ Our Crew</span>
+            <div class="label">Boots on the Ground</div>
+          </div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="images/crew-patio-sweep.jpg" alt="HP Helpers worker sweeping winter debris off a residential patio" loading="lazy" />
+          <div class="gallery-caption">
+            <span class="tag">Detail Work</span>
+            <div class="label">Patio Cleanup Included</div>
+          </div>
+        </div>
+
         <div class="gallery-item">
           <img src="images/commercial-mowing.jpg" alt="Freshly mowed commercial property in DFW" loading="lazy" />
           <div class="gallery-caption">
@@ -867,6 +1015,43 @@
     </div>
   </section>
 
+  <!-- Parent brand credibility -->
+  <section class="credibility">
+    <div class="credibility-inner">
+      <img src="images/hp-logo.png" alt="Heritage Pride Helpers" style="width:140px; height:auto; margin: 0 auto 1.25rem; display:block;" />
+      <span class="credibility-eyebrow">★ The Heritage Pride Difference ★</span>
+      <h2 class="credibility-headline">
+        Built on a track record of <span class="red">showing up.</span>
+      </h2>
+      <p class="credibility-sub">
+        HP Helpers Grounds is the lawn and grounds arm of <strong>Heritage Pride Helpers</strong> — a veteran-owned, Arlington-based service company built on a simple promise: do what we say we're going to do.
+      </p>
+
+      <div class="credibility-stats">
+        <div class="cred-stat">
+          <span class="num">4.8★</span>
+          <span class="label">Google rating on the moving side</span>
+        </div>
+        <div class="cred-stat">
+          <span class="num">2017</span>
+          <span class="label">Serving DFW since</span>
+        </div>
+        <div class="cred-stat">
+          <span class="num">★</span>
+          <span class="label">Veteran-owned & operated</span>
+        </div>
+        <div class="cred-stat">
+          <span class="num">DFW</span>
+          <span class="label">Locally based in Arlington</span>
+        </div>
+      </div>
+
+      <p class="credibility-note">
+        New to lawn care this spring — same crew, same standards. Be one of our first to leave a Google review for our grounds service.
+      </p>
+    </div>
+  </section>
+
   <!-- Service area -->
   <section class="service-area">
     <div class="container">
@@ -927,14 +1112,32 @@
 
   <!-- Footer -->
   <footer>
+    <img src="images/hp-logo.png" alt="Heritage Pride Helpers" style="width:80px; height:auto; margin: 0 auto 1rem; display:block; opacity:0.95;" />
     <div class="brand-name display" style="font-size:1.5rem;">
       HP Helpers <span class="accent">Grounds</span>
     </div>
     <p class="footer-tag">Where Service Meets Pride — Now On Your Grounds</p>
-    <p>📞 <a href="tel:+18177617973">817-761-7973</a></p>
+    <p>📞 <a href="tel:+18177617973">817-761-7973</a> &nbsp;•&nbsp; ✉️ <a href="mailto:info@hphelpers.com">info@hphelpers.com</a></p>
     <p style="margin-top:0.5rem;">Serving the DFW Metroplex</p>
+
+    <div class="footer-social" aria-label="Social media">
+      <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+      </a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.71 3.71 0 0 1-1.38-.9 3.71 3.71 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.92 5.92 0 0 0-2.13 1.39A5.92 5.92 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91a5.92 5.92 0 0 0 1.39 2.13 5.92 5.92 0 0 0 2.13 1.39c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.92 5.92 0 0 0 2.13-1.39 5.92 5.92 0 0 0 1.39-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.92 5.92 0 0 0-1.39-2.13A5.92 5.92 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+      </a>
+    </div>
+
+    <div class="footer-crosslink">
+      Need help moving too? Visit <a href="https://hphelpers.com" target="_blank" rel="noopener">hphelpers.com</a> for our 4.8★ moving and packing services across DFW.
+    </div>
+
     <div class="copyright">
-      © <span id="year"></span> HP Helpers Grounds. A Heritage Pride Helpers company.
+      © <span id="year"></span> HP Helpers Grounds — A Heritage Pride Helpers company. Veteran-owned • DFW-based • Since 2017.
+    </div>
+    <div class="footer-legal">
+      HP Helpers &amp; Logistics, LLC • Arlington, TX
     </div>
   </footer>
 
