@@ -289,8 +289,19 @@
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    @media (min-width: 1100px) {
+      .services-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: none;
+      }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
     }
     .service-card {
       background: white;
@@ -604,33 +615,6 @@
       margin-right: auto;
     }
 
-    /* === Bokeh particles in hero === */
-    .hero { overflow: hidden; }
-    .bokeh {
-      position: absolute;
-      pointer-events: none;
-      border-radius: 50%;
-      opacity: 0;
-      will-change: transform, opacity;
-    }
-    @keyframes float-up {
-      0% { transform: translateY(40px) scale(0.6); opacity: 0; }
-      15% { opacity: 0.6; }
-      85% { opacity: 0.4; }
-      100% { transform: translateY(-260px) scale(1.1); opacity: 0; }
-    }
-    .b1 { left: 8%;  bottom: 0; width: 14px; height: 14px; background: var(--red); animation: float-up 9s ease-in 0s infinite; filter: blur(2px); }
-    .b2 { left: 18%; bottom: 0; width: 22px; height: 22px; background: var(--cream-dark); animation: float-up 11s ease-in 1.2s infinite; filter: blur(3px); opacity: 0.7; }
-    .b3 { left: 32%; bottom: 0; width: 10px; height: 10px; background: var(--navy); animation: float-up 8s ease-in 2.5s infinite; filter: blur(1px); }
-    .b4 { left: 47%; bottom: 0; width: 18px; height: 18px; background: var(--red); animation: float-up 10s ease-in 0.8s infinite; filter: blur(2px); }
-    .b5 { left: 60%; bottom: 0; width: 12px; height: 12px; background: var(--grass); animation: float-up 9.5s ease-in 3s infinite; filter: blur(2px); }
-    .b6 { left: 73%; bottom: 0; width: 26px; height: 26px; background: var(--cream-dark); animation: float-up 12s ease-in 0.4s infinite; filter: blur(4px); opacity: 0.6; }
-    .b7 { left: 84%; bottom: 0; width: 14px; height: 14px; background: var(--navy); animation: float-up 8.5s ease-in 1.8s infinite; filter: blur(2px); }
-    .b8 { left: 92%; bottom: 0; width: 16px; height: 16px; background: var(--red); animation: float-up 10.5s ease-in 4s infinite; filter: blur(2px); }
-    @media (prefers-reduced-motion: reduce) {
-      .bokeh { display: none; }
-    }
-
     /* === Parallax marquee banner === */
     .marquee {
       position: relative;
@@ -925,14 +909,6 @@
 
   <!-- Hero -->
   <section class="hero">
-    <span class="bokeh b1"></span>
-    <span class="bokeh b2"></span>
-    <span class="bokeh b3"></span>
-    <span class="bokeh b4"></span>
-    <span class="bokeh b5"></span>
-    <span class="bokeh b6"></span>
-    <span class="bokeh b7"></span>
-    <span class="bokeh b8"></span>
     <div class="hero-inner">
       <span class="eyebrow">★ A Heritage Pride Helpers Company ★</span>
       <h1 class="display hero-title">
@@ -1008,7 +984,7 @@
             <div class="ba-stamp before">Before</div>
           </div>
           <div class="ba-item">
-            <img src="images/customer-back-yard-after.jpg" alt="Same backyard freshly mowed and cleaned up after HP Helpers service" loading="lazy" />
+            <img src="images/customer-crew-onsite.jpg" alt="Same backyard freshly mowed and edged after HP Helpers service" loading="lazy" />
             <div class="ba-stamp after">After</div>
           </div>
         </div>
@@ -1031,18 +1007,18 @@
 
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="images/customer-crew-onsite.jpg" alt="HP Helpers crew in red uniform shirts on a freshly mowed residential backyard" loading="lazy" />
+          <img src="images/crew-patio-sweep.jpg" alt="HP Helpers worker sweeping winter debris off a residential patio" loading="lazy" />
           <div class="gallery-caption">
-            <span class="tag">★ Our Crew</span>
-            <div class="label">Boots on the Ground</div>
+            <span class="tag">Optional Work</span>
+            <div class="label">Patio Cleanup</div>
           </div>
         </div>
 
         <div class="gallery-item">
-          <img src="images/crew-patio-sweep.jpg" alt="HP Helpers worker sweeping winter debris off a residential patio" loading="lazy" />
+          <img src="images/customer-back-yard-after.jpg" alt="Cleanly mowed residential back yard after service" loading="lazy" />
           <div class="gallery-caption">
-            <span class="tag">Detail Work</span>
-            <div class="label">Patio Cleanup Included</div>
+            <span class="tag">Residential</span>
+            <div class="label">Back Yard, Cleaned Up</div>
           </div>
         </div>
 
@@ -1087,9 +1063,9 @@
         </div>
 
         <div class="gallery-item">
-          <img src="images/lot-clearing-before.jpg" alt="Heavily overgrown lot before brush clearing service" loading="lazy" />
+          <img src="images/lot-clearing-before.jpg" alt="Heavily overgrown lot needing brush clearing service" loading="lazy" />
           <div class="gallery-caption">
-            <span class="tag">Before</span>
+            <span class="tag">Heavy</span>
             <div class="label">Brush & Lot Clearing</div>
           </div>
         </div>
